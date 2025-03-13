@@ -1,0 +1,86 @@
+:root {
+    --transition-duration: 0.5s;
+}
+
+* {
+    letter-spacing: 0.7px !important;
+    word-spacing: 3px;
+}
+
+body {
+    background-color: white;
+    font-family: "Oswald", sans-serif;
+}
+
+form {
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    text-overflow: ellipsis;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #999;
+    background-color: #eee;
+    padding: 10px;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    transition: var(--transition-duration);
+    color: #999;
+}
+
+form input:focus::placeholder,
+form textarea:focus::placeholder {
+    opacity: 0;
+}
+
+form input:not([type="submit"]),
+form textarea {
+    margin-bottom: 10px;
+}
+
+form textarea {
+    height: 100px;
+    resize: none;
+}
+
+form input[type="submit"] {
+    transition: var(--transition-duration);
+}
+
+form i {
+    float: left;
+    position: relative;
+    top: -40px;
+    left: 8px;
+    color: #999;
+}
+
+i:before {
+    margin: 0;
+    padding: 0;
+}
+
+.form-errors {
+    color: red;
+}
+
+.required {
+    position: relative;
+}
+
+.required::before {
+    content: "*";
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    color: red;
+    font-size: 25px;
+    opacity: 0.4;
+    transform: translateY(-50%);
+}
